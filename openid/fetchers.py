@@ -15,6 +15,8 @@ import http.client
 
 import time
 import io
+import os
+import ssl
 import sys
 import contextlib
 
@@ -228,7 +230,10 @@ class Urllib2Fetcher(HTTPFetcher):
 
         url_resource = None
         try:
-            url_resource = self.urlopen(req)
+            if os.environ.get('OPENID_URLIB2_USE_UNVERIFIED_CONTEXT'):
+                url_resource = self.urlopen(req, context=ssl._create_unverified_context())
+            else:
+                url_resource = self.urlopen(req)
             with contextlib.closing(url_resource):
                 return self._makeResponse(url_resource)
         except urllib.error.HTTPError as why:

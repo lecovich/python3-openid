@@ -12,7 +12,7 @@ install_requires = [
 ]
 
 setup(
-    name='python3-openid',
+    name='python3-openid-ssl-ignore',
     version=version,
     description='OpenID support for modern servers and consumers.',
     long_description='''This is a set of Python packages to support use of

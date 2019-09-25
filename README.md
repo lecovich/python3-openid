@@ -1,3 +1,7 @@
+*NOTE*: This is a [fork](https://github.com/necaris/python3-openid) with main purpose of ignoring self-signed
+certificates restriciton depending on environment variable `OPENID_URLIB2_USE_UNVERIFIED_CONTEXT`. This fork is 
+used for internal usage only and it is not going to be published to pypi.org. 
+
 *NOTE*: This started out as a fork of the Python OpenID library, with changes
 to make it Python 3 compatible. It's now a port of that library, including
 cleanups and updates to the code in general.
